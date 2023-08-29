@@ -1,0 +1,22 @@
+<h1>Créer ta course</h1>
+<div>
+  <p>Localisation</p>
+  <input id="location" #location />
+</div>
+<h3>Participants</h3>
+<div style="margin-left: 1em">
+  <p>Poney 1</p>
+  <input id="pony1" #pony1 />
+  <p>Poney 2</p>
+  <input id="pony2" #pony2 />
+  <p>Poney 3</p>
+  <input id="pony3" #pony3 />
+</div>
+
+<button
+  type="button"
+  class="add-button"
+  (click)="add(location.value, pony1.value, pony2.value, pony3.value)"
+>
+  Nouvelle
+</button>

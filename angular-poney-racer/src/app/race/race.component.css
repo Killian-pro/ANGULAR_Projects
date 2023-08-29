@@ -1,0 +1,21 @@
+.ponies
+{
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+
+.bet
+{
+    background-color: cadetblue;
+    padding: 0.5em;
+    color: white;
+}
+.new
+{
+    background-color: purple;
+    padding: 0.5em;
+    color: white;
+    margin-left: 2em;
+}
+

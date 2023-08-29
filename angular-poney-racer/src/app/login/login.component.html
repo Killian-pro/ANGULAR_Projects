@@ -1,0 +1,14 @@
+<h1>Login</h1>
+<div>
+  <p>Email</p>
+  <input id="login" #login />
+</div>
+<p>Mot de passe</p>
+<input id="password" #password />
+<button
+  type="button"
+  class="add-button"
+  (click)="add(login.value, password.value)"
+>
+  Connexion
+</button>
