@@ -8,7 +8,7 @@ describe('RaceDetailComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [RaceDetailComponent]
+      declarations: [RaceDetailComponent],
     });
     fixture = TestBed.createComponent(RaceDetailComponent);
     component = fixture.componentInstance;
@@ -17,5 +17,12 @@ describe('RaceDetailComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  // £ test unitaire
+  it('should return a random move', () => {
+    const move = component.getRandomMove();
+    expect(move).toBeGreaterThanOrEqual(0);
+    expect(move).toBeLessThan(4);
   });
 });
