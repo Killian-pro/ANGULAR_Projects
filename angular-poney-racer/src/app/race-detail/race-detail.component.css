@@ -1,0 +1,29 @@
+.container {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  padding: 35px;
+  margin: 1em;
+}
+
+.background .shape {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  border-radius: 50%;
+}
+.shape:first-child {
+  background: linear-gradient(#1845ad, #23a2f6);
+  left: 0px;
+  top: 0px;
+}
+.shape:last-child {
+  background: linear-gradient(to right, #ff512f, #f09819);
+  right: 0px;
+  bottom: 0px;
+}
+.moveRight {
+  width: 150px;
+}

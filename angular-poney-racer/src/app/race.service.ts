@@ -8,6 +8,7 @@ import { Observable, of } from 'rxjs';
 })
 export class RaceService {
   races: RaceModel[] = [...RACEJSON];
+  race: RaceModel[] = [];
 
   add(location: string, pony1: string, pony2: string, pony3: string) {
     this.races.push({
@@ -40,5 +41,15 @@ export class RaceService {
   // £ Utilisation de Observable
   getRaces(): Observable<RaceModel[]> {
     return of(this.races);
+  }
+
+  getRaceById(id: number): Observable<RaceModel> {
+    const race = this.races.find((rc) => rc.id === id);
+
+    if (race) {
+      return of(race);
+    } else {
+      return of();
+    }
   }
 }

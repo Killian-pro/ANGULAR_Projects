@@ -1,1 +1,47 @@
-<p>race-detail works!</p>
+<div class="background">
+  <div class="shape"></div>
+  <div class="shape"></div>
+</div>
+<div class="container">
+  <div
+    (click)="goBack()"
+    style="
+      color: white;
+      font-size: 50px;
+      position: absolute;
+      top: 0;
+      left: 10;
+      cursor: pointer;
+    "
+  >
+    ⇦
+  </div>
+  <div *ngIf="!winner">
+    <h2 style="color: white">{{ race.name | uppercase }}</h2>
+    <div class="ponies" *ngFor="let pony of race.ponies; let i = index">
+      <div class="moveRight">
+        <div style="color: white; text-decoration: underline; font-size: 20px">
+          {{ pony.name }}
+        </div>
+        <img
+          [src]="
+            'https://ng-ponyracer.ninja-squad.com/assets/images/pony-' +
+            pony.color.toLowerCase() +
+            '-running.gif'
+          "
+          alt="{{ pony.name }}"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    style="align-items: center; display: flex; flex-direction: column"
+    *ngIf="winner"
+  >
+    <h1 style="color: white">le gagnant est {{ winner }}</h1>
+    <img
+      width="50%"
+      src="https://media.tenor.com/KGM1UjQeWRMAAAAC/lol-laughing.gif"
+    />
+  </div>
+</div>
