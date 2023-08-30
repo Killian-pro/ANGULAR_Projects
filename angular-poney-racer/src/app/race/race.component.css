@@ -11,6 +11,11 @@
 }
 
 .bet {
+  background-color: cadetblue;
+  padding: 0.5em;
+  color: white;
+}
+.delete {
   background-color: red;
   padding: 0.5em;
   color: white;

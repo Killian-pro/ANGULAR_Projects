@@ -9,21 +9,36 @@
       Créer une nouvelle course
     </button>
   </div>
-  <div *ngFor="let race of races">
+  <!-- £ pipe pour observable async -->
+  <div *ngFor="let race of races$ | async">
     <!-- £  utilisation de pipes -->
     <h2 style="color: white">{{ race.name | uppercase }}</h2>
     <div class="ponies">
       <div *ngFor="let pony of race.ponies">
         <div
-          style="padding: 10px;color: white; background-color: {{ pony.color }}"
+          [ngStyle]="{
+            padding: '10px',
+            color: 'white',
+            'background-color': pony.color
+          }"
         >
           {{ pony.name }}
         </div>
+        <img
+          [src]="
+            'https://ng-ponyracer.ninja-squad.com/assets/images/pony-' +
+            pony.color.toLowerCase() +
+            '.gif'
+          "
+          alt="Image du poney"
+        />
       </div>
 
-      <!--  <button class="bet" routerLink="/raceDetail/{{ race.id }}">Parier</button> -->
-      <button *ngIf="token" class="bet" (click)="delete(race.id)">
+      <button *ngIf="token" class="delete" (click)="delete(race.id)">
         Delete
+      </button>
+      <button *ngIf="token" class="bet" routerLink="/raceDetail/{{ race.id }}">
+        Parier
       </button>
     </div>
   </div>

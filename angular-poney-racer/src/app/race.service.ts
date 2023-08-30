@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { RaceModel } from './models/race.model';
 import { RACEJSON } from './JsonData/raceJson';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -36,7 +37,8 @@ export class RaceService {
     }
   }
 
-  getRace() {
-    return this.races;
+  // £ Utilisation de Observable
+  getRaces(): Observable<RaceModel[]> {
+    return of(this.races);
   }
 }

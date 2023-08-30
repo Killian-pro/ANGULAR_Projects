@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RaceService } from '../race.service';
 import { RaceModel } from '../models/race.model';
 import { LoginService } from '../login.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-race',
@@ -9,7 +10,7 @@ import { LoginService } from '../login.service';
   styleUrls: ['./race.component.css'],
 })
 export class RaceComponent implements OnInit {
-  races: RaceModel[] = [];
+  races$?: Observable<RaceModel[]>;
   token: boolean = false;
 
   // £ utilisation des services
@@ -18,7 +19,7 @@ export class RaceComponent implements OnInit {
     private loginService: LoginService
   ) {}
   ngOnInit(): void {
-    this.races = this.raceService.getRace();
+    this.races$ = this.raceService.getRaces();
     this.token = this.loginService.token;
   }
   delete(id: number) {

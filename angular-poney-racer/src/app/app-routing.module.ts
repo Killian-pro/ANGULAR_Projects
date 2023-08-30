@@ -12,7 +12,11 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'login', component: LoginComponent },
   { path: 'race', component: RaceComponent },
-  { path: 'newRace', component: NewRaceComponent },
+  {
+    path: 'newRace',
+    component: NewRaceComponent,
+    canActivate: [loggedInGuard],
+  },
   {
     path: 'raceDetail/:id',
     component: RaceDetailComponent,
