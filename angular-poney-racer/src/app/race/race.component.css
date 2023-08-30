@@ -1,21 +1,45 @@
-.ponies
-{
-    display: flex;
-    flex-direction: row;
-    gap: 1em;
+.main {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  gap: 2em;
+}
+.ponies {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
 }
 
-.bet
-{
-    background-color: cadetblue;
-    padding: 0.5em;
-    color: white;
+.bet {
+  background-color: red;
+  padding: 0.5em;
+  color: white;
 }
-.new
-{
-    background-color: purple;
-    padding: 0.5em;
-    color: white;
-    margin-left: 2em;
+.new {
+  background-color: cadetblue;
+  padding: 0.5em;
+  color: white;
+  margin-left: 2em;
+  width: 20em;
 }
 
+button {
+  background-color: #ffffff;
+  color: #080710;
+  padding: 15px 0;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+}
+
+.container {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  padding: 35px;
+  margin: 2em;
+}

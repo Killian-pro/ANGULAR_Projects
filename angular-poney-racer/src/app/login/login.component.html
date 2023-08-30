@@ -1,14 +1,23 @@
-<h1>Login</h1>
-<div>
-  <p>Email</p>
-  <input id="login" #login />
+<div class="background">
+  <div class="shape"></div>
+  <div class="shape"></div>
 </div>
-<p>Mot de passe</p>
-<input id="password" #password />
-<button
-  type="button"
-  class="add-button"
-  (click)="add(login.value, password.value)"
->
-  Connexion
-</button>
+<!--£ utilisation des formulaires -->
+<form>
+  <h3>Login</h3>
+
+  <label for="username">Username</label>
+  <input type="text" placeholder="Email = a@a" id="username" #login />
+
+  <label for="password">Password</label>
+  <input
+    type="password"
+    placeholder="Password = Password"
+    id="password"
+    #password
+  />
+
+  <button type="button" class="btn" (click)="add(login.value, password.value)">
+    Connexion
+  </button>
+</form>

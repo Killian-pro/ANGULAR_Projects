@@ -32,9 +32,8 @@ export class RaceService {
   delete(raceId: number) {
     let indexToDell = this.races.findIndex((el) => el.id === raceId);
     if (indexToDell !== -1) {
-      // this.races = this.races.slice(0, indexToDell);
+      this.races.splice(indexToDell, 1);
     }
-    console.log(indexToDell);
   }
 
   getRace() {

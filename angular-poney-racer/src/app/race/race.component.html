@@ -1,16 +1,30 @@
-<h1>Bienvenue sur les courses</h1>
-<a routerLink="/">retourner en arrière</a>
-<button class="new" routerLink="/newRace">Créer une nouvelle course</button>
-
-<div *ngFor="let race of races">
-  <h2>{{ race.name }}</h2>
-  <div class="ponies">
-    <div style="background-color: beige" *ngFor="let pony of race.ponies">
-      <div style="padding: 10px">{{ pony.name }}</div>
-    </div>
+<div class="container">
+  <div class="main">
+    <!-- £ utilisation de directive -->
+    <button class="new" *ngIf="!token" routerLink="/login">Se Connecter</button>
+    <button class="new" *ngIf="token" (click)="logout()" routerLink="/">
+      Se Déconnecter
+    </button>
+    <button class="new" *ngIf="token" routerLink="/newRace">
+      Créer une nouvelle course
+    </button>
   </div>
-  <div style="margin-top: 1em">
-    <!-- <button class="bet" routerLink="/raceDetail/{{ race.id }}">Parier</button> -->
-    <button class="bet" (click)="delete(race.id)">Delete</button>
+  <div *ngFor="let race of races">
+    <!-- £  utilisation de pipes -->
+    <h2 style="color: white">{{ race.name | uppercase }}</h2>
+    <div class="ponies">
+      <div *ngFor="let pony of race.ponies">
+        <div
+          style="padding: 10px;color: white; background-color: {{ pony.color }}"
+        >
+          {{ pony.name }}
+        </div>
+      </div>
+
+      <!--  <button class="bet" routerLink="/raceDetail/{{ race.id }}">Parier</button> -->
+      <button *ngIf="token" class="bet" (click)="delete(race.id)">
+        Delete
+      </button>
+    </div>
   </div>
 </div>

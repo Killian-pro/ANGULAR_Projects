@@ -1,22 +1,29 @@
-<h1>Créer ta course</h1>
-<div>
-  <p>Localisation</p>
-  <input id="location" #location />
-</div>
-<h3>Participants</h3>
-<div style="margin-left: 1em">
-  <p>Poney 1</p>
-  <input id="pony1" #pony1 />
-  <p>Poney 2</p>
-  <input id="pony2" #pony2 />
-  <p>Poney 3</p>
-  <input id="pony3" #pony3 />
+<div class="background">
+  <div class="shape"></div>
+  <div class="shape"></div>
 </div>
 
-<button
-  type="button"
-  class="add-button"
-  (click)="add(location.value, pony1.value, pony2.value, pony3.value)"
->
-  Nouvelle
-</button>
+<form>
+  <div style="text-align: center">Créer ta course</div>
+  <label for="location">Localisation</label>
+  <input type="text" placeholder="Localisation" id="location" #location />
+  <div style="margin-top: 1em">Participants</div>
+  <div style="margin-left: 1em">
+    <label for="pony1">Poney 1</label>
+    <input type="text" placeholder="Nom du Poney 1" id="pony1" #pony1 />
+
+    <label for="pony2">Poney 2</label>
+    <input type="text" placeholder="Nom du Poney 2" id="pony2" #pony2 />
+
+    <label for="pony3">Poney 3</label>
+    <input type="text" placeholder="Nom du Poney 3" id="pony3" #pony3 />
+  </div>
+
+  <button
+    type="button"
+    class="btn"
+    (click)="add(location.value, pony1.value, pony2.value, pony3.value)"
+  >
+    Nouvelle Course
+  </button>
+</form>

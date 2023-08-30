@@ -1,0 +1,24 @@
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+  flex: 1;
+  height: 100vh;
+}
+.btn {
+  background-color: cadetblue;
+  color: white;
+  width: 20em;
+}
+button {
+  margin-top: 50px;
+  background-color: #ffffff;
+  color: #080710;
+  padding: 15px 0;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+}

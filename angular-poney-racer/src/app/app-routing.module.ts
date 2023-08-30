@@ -5,6 +5,7 @@ import { RaceComponent } from './race/race.component';
 import { RaceDetailComponent } from './race-detail/race-detail.component';
 import { LoginComponent } from './login/login.component';
 import { NewRaceComponent } from './new-race/new-race.component';
+import { loggedInGuard } from './auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -12,7 +13,12 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'race', component: RaceComponent },
   { path: 'newRace', component: NewRaceComponent },
-  { path: 'raceDetail/:id', component: RaceDetailComponent },
+  {
+    path: 'raceDetail/:id',
+    component: RaceDetailComponent,
+    // £ utilisation de Guards
+    canActivate: [loggedInGuard],
+  },
 ];
 
 @NgModule({
